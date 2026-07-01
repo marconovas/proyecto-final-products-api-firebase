@@ -1,4 +1,4 @@
-import { db } from "../config/firebase.js";
+import  db  from "../config/firebase.js";
 
 const productsCollection = db.collection("products");
 
@@ -30,10 +30,7 @@ export const getProductById = async (id) => {
 export const createProduct = async (product) => {
     const docRef = await productsCollection.add(product);
 
-    return {
-        id: docRef.id,
-        ...docRef.data()
-    };
+    return await getProductById(docRef.id);
 };
 
 //UPDATE PRODUCT

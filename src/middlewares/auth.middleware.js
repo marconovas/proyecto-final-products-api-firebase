@@ -5,8 +5,8 @@ const SECRET = process.env.JWT_SECRET;
 export async function authMiddleware(req, res, next) {
     const authHeader = req.headers.authorization;
 
-    if(!auth){
-        res.status(401).json({
+    if(!authHeader){
+        return res.status(401).json({
             message: "Token requerido."
         });
     }
@@ -16,13 +16,14 @@ export async function authMiddleware(req, res, next) {
     try{
         const decoded = jwt.verify(
             token,
-            SECRET
+            process.env.JWT_SECRET
         );
 
-        res.user = decoded;
+        req.user = decoded;
         
         next();
     } catch(error) {
+        console.log(error);
         return res.status(403).json({
             message: "Token inválido."
         })

@@ -1,4 +1,4 @@
-import * as ProductModel from "../models/products.model";
+import * as ProductModel from "../models/products.model.js";
 
 //GET ALL PRODUCTS
 export async function getAllProducts() {
