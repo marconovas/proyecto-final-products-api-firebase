@@ -2,6 +2,9 @@
 
 REST API developed with Node.js and Express for managing products. The project implements authentication using JWT, data persistence with Firebase Firestore, and a layered architecture following backend development best practices.
 
+## Deployment
+https://proyecto-final-products-api-firebas.vercel.app/
+
 ## Features
 
 - User authentication with JWT
@@ -53,6 +56,8 @@ Create a `.env` file in the root directory:
 ```env
 PORT=3000
 JWT_SECRET=your_secret_key
+ADMIN_EMAIL=admin@gmail.com
+ADMIN_PASSWORD=123456
 ```
 
 ## Running the Project
