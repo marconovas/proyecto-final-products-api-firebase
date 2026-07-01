@@ -80,7 +80,7 @@ npm start
 
 | Method | Endpoint | Description |
 |----------|----------|-------------|
-| POST | /api/auth/login | User login |
+| POST | /auth/login | User login |
 
 ### Products
 
